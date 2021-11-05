@@ -1,0 +1,7 @@
+firm_ciks = ["1537917", "1434647", "1572694", "1622893", "750558", "1610618", "1664767", "1562214", "1636032", "847942"] #This is a random list of CIKs we want to download.
+import time
+from sec_edgar_downloader import Downloader
+download_location = Downloader
+SEC_EDGAR_RATE_LIMIT_SLEEP_INTERVAL = 0.12
+for firm_cik in firm_ciks:
+    dl.get("10-K", firm_cik, after="2010-01-01", before="2021-05-05", download_details=True) #You can change "10-K" to other types of filings. I like to keep download_details=True for converting/stripping later on if I am doing textual analysis. You will note that these files have A LOT of html in them. You can use my html_to_text repo to strip/parse/normalize/whatever the html files. 
